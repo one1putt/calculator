@@ -52,6 +52,7 @@ function calculate(equation) {
                 break
             case '/':
                 if (b === 0) {
+                    display.style.fontSize = '20px'
                     return "Popamakadangdang, you divided by 0!!"
                 }
                 a = divide(a, b)
@@ -61,7 +62,7 @@ function calculate(equation) {
         }
     }
     if (isNaN(a)) return 'error'
-    return a
+    return (Math.round(a * 100000000) / 100000000)
 }
 
 // every time a button is clicked (except equal and clear) we update the display to show that char.
@@ -80,6 +81,7 @@ function updateDisplay(char) {
 function clearDisplay() {
     display.textContent = ''
     clickText = []
+    display.style.fontSize = '64px'
 }
 
 // this will extract the operands from the equation and put them in an Array.

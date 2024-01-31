@@ -1,0 +1,76 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: Roboto, sans-serif;
+    font-size: 28px;
+}
+/* this was also how he did the defaults for his body. 100vh and 100% width */
+body {
+    height: 100vh;
+    width: 100%;
+    background-color: rgb(50, 50,50);
+}
+
+.calculator {
+    width: 500px;
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 50px auto;
+    background-color: black;
+    border-radius: 40px;
+    padding: 50px;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    gap: 20px;
+}
+
+button {
+    background-color: orange;
+    color: white;
+    font-size: 38px;
+    padding: 20px;
+    border-radius: 50%;
+    height: 80px;
+    width: 80px;
+    border-width: 0px;
+}
+
+.long {
+    width: 180px;
+    border-radius: 40px;
+}
+
+.gray {
+    background-color: rgb(50, 50, 50);
+}
+
+.lt-gray {
+    background-color: rgb(150, 150, 150);
+    color: black
+}
+
+#display {
+    background-color: black;
+    color: white;
+    width: 380px;
+    height: 75px;
+    font-size: 64px;
+    text-align: right;
+    margin: 25px;
+    padding: 10px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    font-weight: 100;
+}

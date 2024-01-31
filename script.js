@@ -31,10 +31,12 @@ function calculate(equation) {
     let inputString = equation.join().replaceAll(',', '')
     let numberList = inputString.split(/[-+*/]/)
     let operands = getOperands(equation)
-    
-    a = parseInt(numberList.shift())
+    console.log(inputString)
+    console.log(numberList)
+    console.log(operands)
+    a = Number(numberList.shift())
     for (let operand of operands) {
-        b = parseInt(numberList.shift())
+        b = Number(numberList.shift())
         switch(operand) {
             case '+':
                 a = add(a, b)
@@ -46,13 +48,16 @@ function calculate(equation) {
                 a = multiply(a, b)
                 break
             case '/':
+                if (b === 0) {
+                    return "Popamakadangdang, you divided by 0!!"
+                }
                 a = divide(a, b)
                 break
             default:
-                a = 'Not a proper operator'
+                a = 'error'
         }
-    
     }
+    if (isNaN(a)) return 'error'
     return a
 }
 
@@ -79,7 +84,7 @@ function clearDisplay() {
 function getOperands (equation) {
     let operands = []
     for (item of equation) {
-        if (!(0 <= item && item <= 9)) {
+        if (!(0 <= item && item <= 9 || item === '.')) {
             operands.push(item)
         }
     }

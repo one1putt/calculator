@@ -2,6 +2,7 @@ const display = document.querySelector('#display')
 const numbers = document.querySelectorAll('.number')
 const clear = document.querySelector('#clear')
 const equal = document.querySelector('#equal')
+const back = document.querySelector('#back')
 
 let clickText = []
 
@@ -9,6 +10,7 @@ let firstNumber, secondNumber, operator
 
 clear.addEventListener('click', clearDisplay)
 equal.addEventListener('click', (e) => updateDisplay(e.target.textContent))
+back.addEventListener('click', backSpace)
 
 
 function add(a, b) {
@@ -28,7 +30,7 @@ function divide(a, b) {
 }
 
 function calculate(equation) {
-    let inputString = equation.join().replaceAll(',', '')
+    let inputString = equation.join('')
     let numberList = inputString.split(/[-+*/]/)
     let operands = getOperands(equation)
     console.log(inputString)
@@ -64,6 +66,7 @@ function calculate(equation) {
 function updateDisplay(char) {
     if (char === '=') {
         display.textContent = calculate(clickText)
+        clickText = [display.textContent]
         return
     }
     clickText.push(char)
@@ -89,4 +92,11 @@ function getOperands (equation) {
         }
     }
     return operands
+}
+
+function backSpace() {
+    console.log(clickText)
+    clickText.pop()
+    console.log(clickText)
+    display.textContent = clickText.join('')
 }

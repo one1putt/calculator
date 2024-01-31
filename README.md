@@ -12,7 +12,7 @@ Here are some use cases (abilities your project needs to have):
 Do not worry about wiring up the JS just yet.
 There should also be a display for the calculator. Go ahead and fill it with some dummy numbers so it looks correct.
 Add a “clear” button.
-5. Create the functions that populate the display when you click the number buttons. You should be storing the ‘display value’ in a variable somewhere for use in the next step.
+5. Create the functions that populates the display when you click the number buttons. You should be storing the ‘display value’ in a variable somewhere for use in the next step.
 6. Make the calculator work! You’ll need to store the first number and second number that are input into the calculator, utilize the operator that the user selects, and then operate() on the two numbers when the user presses the “=” key.
     - You should already have the code that can populate the display, so once operate() has been called, update the display with the ‘solution’ to the operation.
     - This is the hardest part of the project. You need to figure out how to store all the values and call the operate function with them. Don’t feel bad if it takes you a while to figure out the logic.

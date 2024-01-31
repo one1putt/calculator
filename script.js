@@ -1,3 +1,7 @@
+const display = document.querySelector('#display')
+const numbers = document.querySelectorAll('.number')
+let clickText
+
 let firstNumber, secondNumber, operator
 
 function add(a, b) {
@@ -35,4 +39,15 @@ function calculate(a, b, operator) {
             answer = 'Not a proper operator'
     }
     return answer
+}
+
+function updateDisplay(char) {
+    clickText = char
+    let displayText = display.textContent
+    displayText += char
+    display.textContent = displayText
+}
+
+for (button of numbers) {
+    button.addEventListener('click', (e) => updateDisplay(e.srcElement.textContent))
 }

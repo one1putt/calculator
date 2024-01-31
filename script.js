@@ -1,8 +1,11 @@
 const display = document.querySelector('#display')
 const numbers = document.querySelectorAll('.number')
+const clear = document.querySelector('#clear')
 let clickText
 
 let firstNumber, secondNumber, operator
+
+clear.addEventListener('click', clearDisplay)
 
 function add(a, b) {
     return a + b
@@ -50,4 +53,8 @@ function updateDisplay(char) {
 
 for (button of numbers) {
     button.addEventListener('click', (e) => updateDisplay(e.srcElement.textContent))
+}
+
+function clearDisplay() {
+    display.textContent = ''
 }

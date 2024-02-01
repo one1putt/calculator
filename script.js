@@ -40,6 +40,8 @@ function calculate(equation) {
     a = Number(numberList.shift())
     for (let operand of operands) {
         b = Number(numberList.shift())
+        console.log(a)
+        console.log(b)
         switch(operand) {
             case '+':
                 a = add(a, b)
